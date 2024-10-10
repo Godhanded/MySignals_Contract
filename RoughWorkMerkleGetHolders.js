@@ -25,7 +25,7 @@ readableStream
         // console.log( row);
         list.push(encodeLeaf(row.HolderAddress, ethers.utils.parseEther(row.Balance)));
         total = total + parseInt(row.Balance);
-        wlist={...wlist,[row.HolderAddress]:{balance: `${ethers.utils.parseEther(row.Balance)}`,leaf:encodeLeaf(row.HolderAddress, ethers.utils.parseEther(row.Balance))}}
+        wlist={...wlist,[ethers.utils.getAddress(row.HolderAddress)]:{balance: `${ethers.utils.parseEther(row.Balance)}`,leaf:encodeLeaf(row.HolderAddress, ethers.utils.parseEther(row.Balance))}}
         // Example: Accessing specific columns
         // const columnName = row['Column Name'];
         // console.log('Specific Column:', columnName);
